@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./index.css">
+  <title>Language models scale reliably with over-training and on downstream tasks</title>
+</head>
+
+<body>
+  <section id='header'>
+    <h2 id='title'>Language models scale reliably with over-training and on downstream tasks</h2>
+    <h2 id='authors' class='text-muted'>
+      <ul>
+        <li><a href='https://sagadre.github.io/'>Samir Yitzhak Gadre</a></li>
+        <li><a href='#'>Georgios Smyrnis</a></li>
+        <li><a href='#'>Vaishaal Shankar</a></li>
+        </ul>
+        <ul>
+        <li><a href='#'>Suchin Gururangan</a></li>
+        <li><a href='#'>Mitchell Wortsman</a></li>
+        <li><a href='#'>Rulin Shao</a></li>
+        <li><a href='#'>Jean Mercat</a></li>
+        </ul>
+        <ul>
+        <li><a href='#'>Alex Fang</a></li>
+        <li><a href='#'>Jeffrey Li</a></li>
+        <li><a href='#'>Sedrick Keh</a></li>
+        <li><a href='#'>Rui Xin</a></li>
+        <li><a href='#'>Marianna Nezhurina</a></li>
+        <li><a href='#'>Igor Vasiljevic</a></li>
+        </ul>
+        <ul>
+        <li><a href='#'>Jenia Jitsev</a></li>
+        <li><a href='#'>Alexandros G. Dimakis</a></li>
+        <li><a href='#'>Gabriel Ilharco</a></li>
+        <li><a href='#'>Shuran Song</a></li>
+        <li><a href='#'>Thomas Kollar</a></li>
+        </ul>
+        <ul>
+        <li><a href='#'>Yair Carmon*</a></li>
+        <li><a href='http://www.achaldave.com/'>Achal Dave*</a></li>
+        <li><a href='#'>Reinhard Heckel*</a></li>
+        <li><a href='#'>Niklas Muennighoff*</a></li>
+        <li><a href='#'>Ludwig Schmidt*</a></li>
+      </ul>
+    </h2>
+  </section>
+  <section id='teaser'>
+    <figure class='figure'>
+      <div id='teaser-videos-container'>
+        <img src="./figure1.png" />
+      </div>
+      <figcaption class='figure-caption' id='teaser-caption'>
+        <b>Reliable scaling in the over-trained regime and for downstream error prediction.</b>
+        <i>(left)</i>
+        We fit a scaling law for model validation loss, parameterized by (i) a token multiplier, which is the ratio of training tokens to parameters and (ii) the approximated compute in FLOPs used to train a model.
+        We extrapolate, in both the number of parameters and token multipliers, the validation performance of models requiring over 300x the training compute used to construct the scaling law.
+        \emph{(right)}
+        We also fit a scaling law to predict average downstream top-1 error as a function of validation loss.
+        We find that fitting scaling laws for downstream error benefits from using more expensive models when compared to fitting for loss prediction.
+        We predict the average error over 17 downstream tasks for models trained with over 20x the compute. 
+      </figcaption>
+    </figure>
+  </section>
+  <section id='updates'>
+    <h3 class='heading'>News</h3>
+    <ul>
+      <li>[2024.03.13]: Check out our <a href="#">preprint</a> and our <a href="https://github.com/mlfoundations/scaling">code</a>!
+  </section>
+  <section id='abstract'>
+    <h3 class='heading'><span>Abstract</span></h3>
+    <div class='content'>
+      Scaling laws are useful guides for developing language models, but there are still gaps
+    between current scaling studies and how language models are ultimately trained and evaluated.  For instance, scaling
+    is usually studied in the compute-optimal training regime (i.e., &ldquo;Chinchilla optimal&rdquo; regime); however, in
+    practice, models are often over-trained to reduce inference costs.  Moreover, scaling laws mostly predict loss on
+    next-token prediction, but ultimately models are compared based on downstream task performance.  In this paper, we
+    address both shortcomings.  To do so, we create a testbed of 104 models with 0.011B to 6.9B parameters trained with
+    various numbers of tokens on three data distributions.  First, we investigate scaling in the over-trained regime.
+    We fit scaling laws that extrapolate in both the number of model parameters and the ratio of training tokens to
+    parameters.  This enables us to predict the validation loss of a 1.4B parameter, 900B token run (i.e., 32x
+    over-trained) and a 6.9B parameter, 138B token run &mdash; each from experiments that take 300x less compute.
+    Second, we relate the perplexity of a language model to its downstream task performance via a power law.  We use
+    this law to predict top-1 error averaged over downstream tasks for the two aforementioned models using experiments
+    that take 20x less compute.  Our experiments are available at <a href="https://github.com/mlfoundations/scaling">https://github.com/mlfoundations/scaling</a>.
+    </div>
+  </section>
+  <section id='downloads'>
+    <h3 class='heading'><span>More info</span></h3>
+    <div class='content'>
+      <!--
+        <div id='paper'>
+         <a href='https://arxiv.org/abs/2005.10356'>
+           <img id='paper-thumbnail' src="./figures/thumbnail.png"></img>
+         </a>
+       </div>
+      -->
+      <div id='paper-links'>
+        <a href="#"><span id='paper-links-paper'>Pre-print</span></a>
+        <a href="https://github.com/mlfoundations/scaling"><span id='paper-links-code'>Code</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id='acknowledgements'>
+    <h3 class='heading'><span>Acknowledgements</span></h3>
+    <p>
+      SYG is supported by an NSF Graduate Research Fellowship, GS by the Onassis Foundation - Scholarship ID: F ZS 056-1/2022-2023, and MN by the Federal Ministry of Education and Research of Germany under grant no. 01IS22094B WEST-AI. We thank Stability AI and Toyota Research Institute (TRI) for access to compute resources. This research has been supported by NSF Grants AF 1901292, CNS 2148141, Tripods CCF 1934932, IFML CCF 2019844, and research gifts by Western Digital, Amazon, WNCG IAP, UT Austin Machine Learning Lab (MLL), Cisco, and the Stanly P. Finch Centennial Professorship in Engineering. We also thank Kushal Arora, Alper Canberk, Mia Chiquier, Sachit Menon, Chuer Pan, Purva Tendulkar, and Mandi Zhao for valuable feedback.
+  </section>
+  <div id='footnote'>* equal advising</div>
+</body>
+
+</html>
+

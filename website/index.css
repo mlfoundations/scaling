@@ -1,0 +1,212 @@
+body {
+    padding: 0 10px 10px 10px;
+}
+
+#header {
+    padding: 10px 0px;
+    max-width: 100%;
+}
+
+#title, #subtitle {
+    text-align: center;
+    color: rgb(83, 0, 25);
+}
+#title {
+    margin-top: 5vh;
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+#subtitle {
+    margin-bottom: 5vh;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+#footnote {
+    text-align: right;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#authors {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+@media (max-width: 900px) {
+    #title {
+        font-size: 1.3rem;
+    }
+    #authors {
+        text-align: center;
+        font-weight: 300;
+        font-size: 0.8rem;
+    }
+}
+#authors li {
+    display: inline-block;
+    margin: 2px 5px;
+}
+#authors li a {
+    color: rgb(83, 0, 25, 0.5);
+    border-bottom: solid 1px black;
+}
+#authors li a:hover {
+    color: black!important;
+    text-decoration: none;
+}
+#authors ul {
+    margin: 0;
+}
+
+#teaser {
+    padding-top: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0;
+}
+
+#teaser-caption {
+    padding: 0 20px;
+    text-align: left !important;
+}
+
+#teaser-videos-container {
+    text-align: center;
+    width: 100%;
+}
+
+#teaser-videos-container img {
+    max-width: 100%;
+    margin: 2px;
+}
+
+@media (min-width: 500px) {
+    #teaser-videos-container img {
+        min-width: 500px;
+        width: 50vw;
+        margin: 2px;
+    }
+}
+
+section .heading {
+    text-align: center;
+    font-weight: 300;
+}
+
+section .heading span {
+    /* color: rgb(43, 0, 83); */
+    color: rgb(83, 0, 25);
+    padding: 0px 10px 2px 10px;
+}
+
+section {
+    padding: 20px 20px;
+    max-width: 1200px;
+    margin: 0 1%;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+#abstract .content {
+    text-align: justify;
+}
+
+pre.inline {
+    display: inline;
+}
+
+#paper-thumbnail {
+    width: 100%;
+}
+
+#downloads {
+    text-align: center;
+}
+
+a {
+    border-bottom: solid 1px rgb(43, 0, 83);
+    color: rgb(43, 0, 83);
+}
+a:hover {
+    background: rgba(43, 0, 83, 0.1);
+    text-decoration: none;
+}
+
+#stats {
+    display: flex;
+}
+
+.stat {
+    color: rgb(83, 0, 25);
+    display: inline-block;
+    flex: 1;
+    text-align: center;
+    margin: 3px;
+    padding: 10px 0;
+}
+.stat-big {
+    font-size: 1.5rem;
+}
+.stat-small {
+    font-size: 1rem;
+}
+
+#paper-links a {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+
+#category-imgs-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+#category-imgs-container div {
+    flex: 1 1 200px;
+    min-height: 150px;
+    min-width: 0;
+    width: 100%;
+    /* Necessary to vertically/horizontally align images.
+     * See https://stackoverflow.com/a/34518335/1291812
+     */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#category-imgs-container div img {
+    width: 100%;
+}
+/*
+#supercategories-img {
+    max-width: 56%;
+    object-fit: contain;
+}
+#wordcloud-img {
+    max-width: 43%;
+    object-fit: contain;
+}*/
+#plots-caption {
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+#abstract div {
+  text-align: justify;
+}
+#acknowledgements p {
+  text-align: justify;
+}
+@media only screen and (max-width: 600px) {
+  #abstract div {
+    text-align: left;
+  }
+  #plots-caption {
+    text-align: center;
+  }
+  #acknowledgements p {
+    text-align: left;
+  }
+}
