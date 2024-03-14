@@ -1,14 +1,12 @@
-<h1>Language models scale reliably with over-training and on downstream tasks</h1>
-<div style="text-align: left;">
+# [Language models scale reliably with over-training and on downstream tasks](https://arxiv.org/abs/2403.08540)
 
-Scaling laws are useful guides for developing language models, but there are still gaps between current scaling studies and how language models are ultimately trained and evaluated. For instance, scaling is usually studied in the compute-optimal training regime (i.e., "Chinchilla optimal" regime); however, in practice, models are often over-trained to reduce inference costs. Moreover, scaling laws mostly predict loss on next-token prediction, but ultimately models are compared based on downstream task performance. In this paper, we address both shortcomings. To do so, we create a testbed of 104 models with 0.011B to 6.9B parameters trained with various numbers of tokens on three data distributions. First, we investigate scaling in the over-trained regime. We fit scaling laws that extrapolate in both the number of model parameters and the ratio of training tokens to parameters. This enables us to predict the validation loss of a 1.4B parameter, 900B token run (i.e., 32x over-trained) and a 6.9B parameter, 138B token run---each from experiments that take 300x less compute. Second, we relate the perplexity of a language model to its downstream task performance via a power law. We use this law to predict top-1 error averaged over downstream tasks for the two aforementioned models using experiments that take 20x less compute. 
 
-</div>
-</div>
 
-<br>
+This repository contains code for our paper [Language models scale reliably with over-training and on downstream tasks](https://arxiv.org/abs/2403.08540).
 
-This repository contains code for messin' around with our scaling laws testbed.
+To understand the scaling behavior of over-trained models (i.e., models trained past compute-optimal), we train 104 models between 11M and 6.9B parameters on three datasets (C4, RedPajama, and RefinedWeb), with various token budgets. We conduct 8 next-token loss evaulations to construct scaling laws that relate training compute, model parameters, and the amount of over-training to next-token loss. To better align scaling laws with downstream accuracy/error metrics, we additionally evaluate all models on 46 downstream tasks. We propose a power law that connects a model's perplexity to its downstream average top-1 error.
+
+We hope you will have fun playing with our scaling testbed!
 
 If you have any questions, please contact [Samir](https://sagadre.github.io) at `sy [at] cs [dot] columbia [dot] edu` or open an issue if you feel others can also benefit from the discussion!
 
@@ -37,7 +35,7 @@ To make interacting with these evaluations simpler, we provide `scaling_explorer
 * Fit loss and downstream scaling laws following the default configurations from Table 2 in our paper.
 * Code to reproduce Figure 1 demonstrating our key results.
 
-We hope that you will consider extending this notebook and find something new that we missed!
+We hope that you will consider extending this notebook!
 
 # Acknowledgements
 
@@ -52,6 +50,7 @@ If you find this code or our paper useful, consider citing:
     author = {Gadre, Samir Yitzhak and Smyrnis, Georgios and Shankar, Vaishaal and Gururangan, Suchin and Wortsman, Mitchell and Shao, Rulin and Mercat, Jean and Fang, Alex and Li, Jeffrey and Keh, Sedrick and Xin, Rui and Nezhurina, Marianna and Vasiljevic, Igor and Jitsev, Jenia and Dimakis, Alexandros G. and Ilharco, Gabriel and Song, Shuran and Kollar, Thomas and Carmon, Yair and Dave, Achal and Heckel, Reinhard and Muennighoff, Niklas and Schmidt, Ludwig},
     title= {Language models scale reliably with over-training and on downstream tasks},
     year = {2024},
-    journal = {Preprint}
+    journal = {arXiv preprint},
+    note = {\url{https://arxiv.org/abs/2403.08540}}
 }
 ```
