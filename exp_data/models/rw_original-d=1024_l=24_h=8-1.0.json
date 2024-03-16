@@ -22,7 +22,7 @@
         ],
         "chinchilla_multiplier": 1.0
     },
-    "checkpoint_url": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
+    "checkpoint_url": "rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
     "open_lm_version": "0.0.21",
     "open_lm_args": [
         "--train-num-samples",
@@ -105,7 +105,7 @@
             "loss_tokens_upper_95": 3.185891939798991,
             "sequences": 120,
             "tokens": 245760,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/openlm/shard_00000000.tar"
             ],
@@ -123,7 +123,7 @@
             "loss_tokens_upper_95": 3.1409334583333335,
             "sequences": 84999,
             "tokens": 174077952,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/c4_val/shard-{0000000..0000010}.tar"
             ],
@@ -141,7 +141,7 @@
             "loss_tokens_upper_95": 3.1859122239583333,
             "sequences": 491,
             "tokens": 1005568,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_c4_en/00000001.tar"
             ],
@@ -159,7 +159,7 @@
             "loss_tokens_upper_95": 2.8336923229166664,
             "sequences": 4900,
             "tokens": 10035200,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_dolma_100_programing_languages/00000001.tar"
             ],
@@ -177,7 +177,7 @@
             "loss_tokens_upper_95": 3.2692054010416665,
             "sequences": 492,
             "tokens": 1007616,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_falcon-refinedweb/00000001.tar"
             ],
@@ -195,7 +195,7 @@
             "loss_tokens_upper_95": 3.839303502169522,
             "sequences": 44,
             "tokens": 90112,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_ptb/00000001.tar"
             ],
@@ -213,7 +213,7 @@
             "loss_tokens_upper_95": 3.194612583333333,
             "sequences": 343,
             "tokens": 702464,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_redpajama/00000001.tar"
             ],
@@ -231,14 +231,14 @@
             "loss_tokens_upper_95": 3.7746214583333333,
             "sequences": 512,
             "tokens": 1048576,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "rw_original-d=1024_l=24_h=8-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/de-en/val_de-en_100.tar"
             ],
             "model": "d=1024_l=24_h=8"
         }
     ],
-    "params_url": "s3://dcnlp-west/dcnlp_experiments_v3/rw_original-d=1024_l=24_h=8-1.0/params.txt",
+    "params_url": "rw_original-d=1024_l=24_h=8-1.0/params.txt",
     "uuid": "59285fd4-b4cc-4739-99fb-1cd96834ab72",
     "creation_date": "2023_12_13-16_18_34"
 }
