@@ -45,7 +45,7 @@
         "--warmup",
         "100",
         "--model",
-        "training/open_lm_configs/open_lm_7b.json",
+        "scaling/open_lm_configs/open_lm_7b.json",
         "--wd",
         "0.033",
         "--beta2",

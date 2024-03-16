@@ -3,7 +3,7 @@
     "dataset_name": "rpj",
     "dataset_uuid": "67db6b77-c7c4-48ae-b431-57254587ed43",
     "hyperparameters": {
-        "model": "training/open_lm_configs/d=1024_l=24_h=8.json",
+        "model": "scaling/open_lm_configs/d=1024_l=24_h=8.json",
         "tokens": 263434403840,
         "warmup": 2000,
         "lr": 0.003,
@@ -42,7 +42,7 @@
         "--warmup",
         "2000",
         "--model",
-        "training/open_lm_configs/d=1024_l=24_h=8.json",
+        "scaling/open_lm_configs/d=1024_l=24_h=8.json",
         "--wd",
         "0.033",
         "--beta2",

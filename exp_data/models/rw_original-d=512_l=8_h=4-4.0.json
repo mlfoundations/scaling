@@ -3,7 +3,7 @@
     "dataset_name": "rw_original",
     "dataset_uuid": "7e0f5507-aa36-4d8c-9026-d049f885adf7",
     "hyperparameters": {
-        "model": "training/open_lm_configs/d=512_l=8_h=4.json",
+        "model": "scaling/open_lm_configs/d=512_l=8_h=4.json",
         "tokens": 6313123840,
         "warmup": 400,
         "lr": 0.003,
@@ -44,7 +44,7 @@
         "--warmup",
         "400",
         "--model",
-        "training/open_lm_configs/d=512_l=8_h=4.json",
+        "scaling/open_lm_configs/d=512_l=8_h=4.json",
         "--wd",
         "0.033",
         "--beta2",

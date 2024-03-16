@@ -21,9 +21,12 @@ builtin_print = __builtin__.print
 @torch.inference_mode()
 def run_model(open_lm: OpenLMforCausalLM, tokenizer, args):
     input = tokenizer(args.input_text)
-    input = {k: torch.tensor(v).unsqueeze(0).cuda() for k, v in input.items()}
     composer_model = SimpleComposerOpenLMCausalLM(open_lm, tokenizer)
-    composer_model = composer_model.cuda()
+    if torch.cuda.is_available():
+        input = {k: torch.tensor(v).unsqueeze(0).cuda() for k, v in input.items()}
+        composer_model = composer_model.cuda()
+    else:
+        input = {k: torch.tensor(v).unsqueeze(0) for k, v in input.items()}
 
     generate_args = {
         "do_sample": args.temperature > 0,
@@ -49,14 +52,14 @@ def run_model(open_lm: OpenLMforCausalLM, tokenizer, args):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-json", choices=[f"{MODEL_JSON_ROOT}/{p}" for p in os.listdir(MODEL_JSON_ROOT)])
-
+    parser.add_argument("--model-json", required=True)
     parser.add_argument("--input-text", required=True)
+
     parser.add_argument("--max-gen-len", default=200, type=int)
     parser.add_argument("--temperature", default=0.8, type=float)
     parser.add_argument("--top-p", default=0.95, type=float)
     parser.add_argument("--use-cache", default=False, action="store_true")
-    parser.add_argument("--num-beams", default=1, type=int)
+    parser.add_argument("--num-beams", default=4, type=int)
 
     add_model_args(parser)
     args = parser.parse_args()
@@ -65,7 +68,11 @@ def main():
     with open(args.model_json, "r") as f:
         data = json.load(f)
 
-    args.params = hf_hub_download(repo_id=HF_MODEL_REPO, filename=data["params_url"])
+    args.model = data["hyperparameters"]["model"]
+    args.qk_norm = True
+    args.model_norm = "gain_only_lp_layer_norm"
+
+    # args.params = hf_hub_download(repo_id=HF_MODEL_REPO, filename=data["params_url"])
     args.checkpoint = hf_hub_download(repo_id=HF_MODEL_REPO, filename=data["checkpoint_url"])
 
     print("Loading model...")
@@ -73,7 +80,9 @@ def main():
     tokenizer = GPTNeoXTokenizerFast.from_pretrained("EleutherAI/gpt-neox-20b")
 
     print("Loading checkpoint from disk...")
-    checkpoint = torch.load(checkpoint)
+    checkpoint = torch.load(
+        args.checkpoint, map_location=torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    )
     state_dict = checkpoint["state_dict"]
     state_dict = {x.replace("module.", ""): y for x, y in state_dict.items()}
     open_lm.model.load_state_dict(state_dict)
