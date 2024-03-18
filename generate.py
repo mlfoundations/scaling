@@ -1,9 +1,12 @@
 import os
 import argparse
+import ast
+from argparse import Namespace
 import json
-import builtins as __builtin__
+import random
 
 import torch
+import numpy as np
 from open_lm.utils.transformers.hf_model import OpenLMforCausalLM
 from open_lm.utils.transformers.hf_config import OpenLMConfig
 from open_lm.utils.llm_foundry_wrapper import SimpleComposerOpenLMCausalLM
@@ -12,10 +15,31 @@ from open_lm.params import add_model_args
 from transformers import GPTNeoXTokenizerFast
 from huggingface_hub import hf_hub_download
 
-from scaling.constants import MODEL_JSON_ROOT, HF_MODEL_REPO
+from scaling.constants import HF_MODEL_REPO
 
 
-builtin_print = __builtin__.print
+random.seed(0)
+np.random.seed(0)
+torch.manual_seed(0)
+
+
+def load_params(params_file):
+
+    args_dict = {}
+    with open(params_file, "r") as f:
+        for line in f:
+            name, val = None, None
+            try:
+                name, val = line.strip().split(": ")
+            except:
+                pass
+            try:
+                args_dict[name] = ast.literal_eval(val)
+            except (ValueError, SyntaxError):
+                args_dict[name] = val
+
+    args_dict_strings = {str(k): v for k, v in args_dict.items()}
+    return Namespace(**args_dict_strings)
 
 
 @torch.inference_mode()
@@ -47,7 +71,7 @@ def run_model(open_lm: OpenLMforCausalLM, tokenizer, args):
     print("-" * 50)
     print("\t\t Model output:")
     print("-" * 50)
-    print(output)
+    print(output.split("<|endoftext|>")[0])
 
 
 def main():
@@ -68,11 +92,11 @@ def main():
     with open(args.model_json, "r") as f:
         data = json.load(f)
 
+    args.params = load_params(hf_hub_download(repo_id=HF_MODEL_REPO, filename=data["params_url"]))
     args.model = data["hyperparameters"]["model"]
-    args.qk_norm = True
-    args.model_norm = "gain_only_lp_layer_norm"
+    args.model_norm = args.params.model_norm
+    args.qk_norm = args.params.qk_norm
 
-    # args.params = hf_hub_download(repo_id=HF_MODEL_REPO, filename=data["params_url"])
     args.checkpoint = hf_hub_download(repo_id=HF_MODEL_REPO, filename=data["checkpoint_url"])
 
     print("Loading model...")
