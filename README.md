@@ -14,6 +14,7 @@ If you have any questions, please contact [Samir](https://sagadre.github.io) at 
 
 - [Environment](#environment)
 - [Examining our testbed](#examining-our-testbed)
+- [Downloading models and inference](#downloading-models-and-inference)
 - [Acknowledgements](#acknowledgements)
 - [Citation](#citation)
 
@@ -36,6 +37,16 @@ To make interacting with these evaluations simpler, we provide `scaling_explorer
 * Code to reproduce Figure 1 demonstrating our key results.
 
 We hope that you will consider extending this notebook!
+
+# Downloading models and inference
+We release model weights here: https://huggingface.co/mlfoundations/scaling/tree/main
+
+WARNING: These are base models and not aligned with post-training. They are provided as is and intended as research artifacts only.
+
+To automatically download a model and run inference, for instance, for the 411M parameter model trained on RefinedWeb for approximately 32x compute-optimal (i.e., with a token multiplier of 640),
+```
+python generate.py --model-json exp_data/models/rw_original-d=1024_l=24_h=8-32.0.json --input-text <your prompt in quotes here>
+```
 
 # Acknowledgements
 

@@ -163,3 +163,6 @@ DATASET_SHAPES = {
     "rpj": "^",
     "rw_original": "d",
 }
+
+HF_MODEL_REPO = "mlfoundations/scaling"
+MODEL_JSON_ROOT = "exp_data/models"

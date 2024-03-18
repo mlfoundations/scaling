@@ -22,7 +22,7 @@
         ],
         "chinchilla_multiplier": 1.0
     },
-    "checkpoint_url": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
+    "checkpoint_url": "c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
     "open_lm_version": "0.0.21",
     "open_lm_args": [
         "--train-num-samples",
@@ -105,7 +105,7 @@
             "loss_tokens_upper_95": 3.3331171099344887,
             "sequences": 120,
             "tokens": 245760,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/openlm/shard_00000000.tar"
             ],
@@ -123,7 +123,7 @@
             "loss_tokens_upper_95": 2.666821286458333,
             "sequences": 84999,
             "tokens": 174077952,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/c4_val/shard-{0000000..0000010}.tar"
             ],
@@ -141,7 +141,7 @@
             "loss_tokens_upper_95": 2.67836046875,
             "sequences": 491,
             "tokens": 1005568,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_c4_en/00000001.tar"
             ],
@@ -159,7 +159,7 @@
             "loss_tokens_upper_95": 2.9851680885416667,
             "sequences": 4900,
             "tokens": 10035200,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_dolma_100_programing_languages/00000001.tar"
             ],
@@ -177,7 +177,7 @@
             "loss_tokens_upper_95": 3.1246610572916667,
             "sequences": 492,
             "tokens": 1007616,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_falcon-refinedweb/00000001.tar"
             ],
@@ -195,7 +195,7 @@
             "loss_tokens_upper_95": 3.7699219530278985,
             "sequences": 44,
             "tokens": 90112,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_ptb/00000001.tar"
             ],
@@ -213,7 +213,7 @@
             "loss_tokens_upper_95": 3.1993236666666665,
             "sequences": 343,
             "tokens": 702464,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/paloma_redpajama/00000001.tar"
             ],
@@ -231,14 +231,14 @@
             "loss_tokens_upper_95": 3.145545161458333,
             "sequences": 512,
             "tokens": 1048576,
-            "checkpoint_path": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
+            "checkpoint_path": "c4_original-open_lm_1b-1.0/checkpoints/epoch_6.pt",
             "val_data": [
                 "training/eval_data/val_tok_mult/de-en/val_de-en_100.tar"
             ],
             "model": "open_lm_1b"
         }
     ],
-    "params_url": "s3://dcnlp-west/dcnlp_experiments_v3/c4_original-open_lm_1b-1.0/params.txt",
+    "params_url": "c4_original-open_lm_1b-1.0/params.txt",
     "uuid": "ef59042d-065c-4af4-b1fa-a8a859ed8f9d",
     "creation_date": "2023_12_13-16_58_25"
 }

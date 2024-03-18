@@ -3,3 +3,7 @@ pandas
 scipy
 ipykernel
 matplotlib
+torch
+huggingface_hub
+transformers
+git+https://github.com/mlfoundations/open_lm.git
