@@ -1,6 +1,6 @@
-# [Language models scale reliably with over-training and on downstream tasks](https://arxiv.org/abs/2403.08540)
+# Language models scale reliably with over-training and on downstream tasks
 
-
+[[Project page](https://mlfoundations.github.io/scaling/)] [[Arxiv](https://arxiv.org/abs/2403.08540)]
 
 This repository contains code for our paper [Language models scale reliably with over-training and on downstream tasks](https://arxiv.org/abs/2403.08540).
 
