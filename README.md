@@ -15,6 +15,7 @@ If you have any questions, please contact [Samir](https://sagadre.github.io) at 
 - [Environment](#environment)
 - [Examining our testbed](#examining-our-testbed)
 - [Downloading models and inference](#downloading-models-and-inference)
+- [Training logs](#training-logs)
 - [Acknowledgements](#acknowledgements)
 - [Citation](#citation)
 
@@ -47,6 +48,9 @@ To automatically download a model and run inference, for instance, for the 411M 
 ```
 python generate.py --model-json exp_data/models/rw_original-d=1024_l=24_h=8-32.0.json --input-text <your prompt in quotes here>
 ```
+
+# Training logs
+For downloading training logs and loading (number of token token, training loss) pairs per run see `training_explorer.ipynb`. Because of the decentrialized nature of our runs, there are unfortunately a few training logs that are not present in our wandb.
 
 # Acknowledgements
 
