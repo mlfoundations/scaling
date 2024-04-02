@@ -98,3 +98,4 @@ local_data
 eval/*.jsonl*
 secrets.env
 __pycache__
+scaling_train_loss.pkl

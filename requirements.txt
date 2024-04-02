@@ -7,3 +7,5 @@ torch
 huggingface_hub
 transformers
 git+https://github.com/mlfoundations/open_lm.git
+wandb
+tqdm
